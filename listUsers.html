@@ -1,0 +1,24 @@
+<script>
+
+var data = JSON.stringify({
+  "age": "12"
+});
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+    debugger
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "http://localhost:4100/postData");
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.setRequestHeader("Cache-Control", "no-cache");
+xhr.setRequestHeader("Postman-Token", "9b25af9b-ce3d-4307-9955-75044c38152b");
+
+xhr.send(data);
+
+</script>
